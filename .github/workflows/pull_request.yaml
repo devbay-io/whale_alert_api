@@ -1,0 +1,32 @@
+name: Go Test
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.19
+
+      - name: Get dependencies
+        run: go mod download
+
+      - name: Run tests
+        run: go test -v ./...
+
+      - name: Update coverage report
+        uses: ncruces/go-coverage-report@9c2067d715037acf992ec38a212629440793e183
+        if: github.event_name == 'push'
+        continue-on-error: true
