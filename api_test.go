@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	whalealertapi "github.com/devbay-io/whale_alert_api"
+	whalealertapi "github.com/devbay-io/whale_alert_api_client"
 )
 
 func TestStatus(t *testing.T) {
