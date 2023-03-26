@@ -1,7 +1,5 @@
 # WhaleAlert API Client
 
-[![Go Coverage](https://github.com/devbay-io/whale_alert_api/wiki/coverage.svg)](https://raw.githack.com/wiki/devbay-io/whale_alert_api/coverage.html)
-
 This is a Go API client for the WhaleAlert API.
 
 ## Usage
